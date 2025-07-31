@@ -72,6 +72,9 @@ export default function RootLayout({
 }>) {
    return (
       <html lang="en">
+         <link rel="preload" as="imaage" href="/gt3rs_t_c.webp" />
+         <link rel="preload" as="imaage" href="/gtr_t_c.webp" />
+         <link rel="preload" as="imaage" href="/m4_t_c.webp" />
          <ReactLenis root>
             <body
                className={`${geistSans.variable} ${geistMono.variable} scroll-smooth bg-background font-mono antialiased overscroll-none`}
