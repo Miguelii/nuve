@@ -44,3 +44,8 @@
 .main-container {
    @apply max-w-[1358px] w-full mx-auto px-5 md:px-10 xl:px-12 2xl:px-0;
 }
+
+canvas,
+.canvas-wrapper {
+   touch-action: none;
+}

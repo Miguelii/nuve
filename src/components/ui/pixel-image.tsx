@@ -4,6 +4,8 @@ import { cn } from '@/utils/cn'
 import { useEffect, useMemo, useState } from 'react'
 import Image from 'next/image'
 
+// TODO REMOVER
+
 type Grid = {
    rows: number
    cols: number

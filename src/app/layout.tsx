@@ -71,10 +71,10 @@ export default function RootLayout({
    children: React.ReactNode
 }>) {
    return (
-      <html lang="en" className="scroll-smooth">
+      <html lang="en">
          <ReactLenis root>
             <body
-               className={`${geistSans.variable} ${geistMono.variable} bg-background font-mono antialiased`}
+               className={`${geistSans.variable} ${geistMono.variable} scroll-smooth bg-background font-mono antialiased overscroll-none`}
             >
                {children}
             </body>
