@@ -3,8 +3,8 @@ import { generateCSP } from './generate-csp'
 import { isPathStaticFiles } from './is-path-static-files'
 
 export const addCSPToResponse = (response: NextResponse<unknown>, pathname: string) => {
-   const csp = generateCSP();
-   
+   const csp = generateCSP()
+
    if (isPathStaticFiles(pathname)) {
       response.headers.set('Content-Security-Policy', csp.contentSecurityPolicyStaticFiles)
    } else {

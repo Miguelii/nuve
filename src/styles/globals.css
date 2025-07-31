@@ -1,47 +1,46 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* DEFINE COLORS */
 :root {
-  --background: #121212;
-  --neutral: #878787;
-  --neutral-dark: #1D1D1D;
-  --primary: #fafafa;
+   --background: #121212;
+   --neutral: #878787;
+   --neutral-dark: #1d1d1d;
+   --primary: #fafafa;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-neutral: var(--neutral);
-  --color-primary: var(--primary);
-  --color-neutral-dark: var(--neutral-dark);
+   --color-background: var(--background);
+   --color-neutral: var(--neutral);
+   --color-primary: var(--primary);
+   --color-neutral-dark: var(--neutral-dark);
 }
 /****  ****/
 
-
 /* DEFINE FONTS */
 @theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+   --font-sans: var(--font-geist-sans);
+   --font-mono: var(--font-geist-mono);
 }
 /****  ****/
 
 ::selection {
-  background: var(--neutral) !important;
-  color: var(--primary) !important;
+   background: var(--neutral) !important;
+   color: var(--primary) !important;
 }
 
 .section-title {
-  @apply text-3xl md:text-4xl lg:text-5xl;
+   @apply text-3xl md:text-4xl lg:text-5xl;
 }
 
 .full-margin {
-  width: 100vw;
-  position: relative;
-  left: 49%;
-  right: 49%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+   width: 100vw;
+   position: relative;
+   left: 49%;
+   right: 49%;
+   margin-left: -50vw;
+   margin-right: -50vw;
 }
 
 .main-container {
-  @apply max-w-[1358px] w-full mx-auto px-5 md:px-10 xl:px-12 2xl:px-0;
+   @apply max-w-[1358px] w-full mx-auto px-5 md:px-10 xl:px-12 2xl:px-0;
 }

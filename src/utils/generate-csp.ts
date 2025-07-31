@@ -36,6 +36,9 @@ export const generateCSP = () => {
     connect-src 'self' 
       blob:
       https://*.googletagmanager.com
+      https://raw.githubusercontent.com 
+      https://raw.githack.com 
+      https://cdn.jsdelivr.net
       https://accounts.google.com;
     form-action 'self';
     frame-ancestors 'self'
