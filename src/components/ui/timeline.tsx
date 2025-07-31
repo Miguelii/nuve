@@ -44,7 +44,11 @@ export const Timeline = ({ data }: { data: TimelineData[] }) => {
                         <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-neutral leading-snug">
                            {item.title}
                         </h3>
-                        <Link href={`${item.key}`} prefetch={false} className="w-fit">
+                        <Link
+                           href={`/${item.key}?anchor=${item.key}`}
+                           prefetch={true}
+                           className="w-fit"
+                        >
                            <Button className="w-fit">Show in showroom</Button>
                         </Link>
                      </div>
@@ -55,7 +59,11 @@ export const Timeline = ({ data }: { data: TimelineData[] }) => {
                         <h3 className="text-2xl text-left font-bold text-neutral leading-snug w-full">
                            {item.title}
                         </h3>
-                        <Link href={`${item.key}`} prefetch={false} className="w-fit">
+                        <Link
+                           href={`/${item.key}?anchor=${item.key}`}
+                           prefetch={true}
+                           className="w-fit"
+                        >
                            <Button className="w-fit">Show in showroom</Button>
                         </Link>
                      </div>

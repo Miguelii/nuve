@@ -1,16 +1,21 @@
 import { Showroom404 } from '@/components/showroom-404'
-import { ShowroomHeader } from '@/components/showroom-header'
+import { Header } from '@/components/header'
 import { ShowroomInfoCard } from '@/components/showroom-info-card'
 import { ShowroomModel } from '@/components/showroom-model'
 import { SplashScreen } from '@/components/splash-screen'
 import ShowroomService from '@/lib/showroom-service'
 import { type ShowroomIdEnum } from '@/types/ShowroomIdEnum'
+import { parseSearchParam } from '@/utils/parse-search-param'
+import { type ShowroomItemType } from '@/types/ShowroomItemType'
 
 export const revalidate = 3600 // 1h
 
-type PageProps = Readonly<{
+type ShowcaseRoomIdPageProps = Readonly<{
    params: Promise<{
       showroomId: string
+   }>
+   searchParams: Promise<{
+      anchor: string
    }>
 }>
 
@@ -31,22 +36,29 @@ export async function generateStaticParams() {
    return paths
 }
 
-export default async function ShowcaseRoomIdPage(props: PageProps) {
+export default async function ShowcaseRoomIdPage(props: ShowcaseRoomIdPageProps) {
    const params = await props.params
+   const searchParams = await props.searchParams
+
+   const anchor = parseSearchParam(searchParams.anchor)
 
    const showroomData = await ShowroomService.getById(
       (params?.showroomId as ShowroomIdEnum) ?? null
    )
 
+   const headerReturnUrl = parseReturnURL({ anchor, showroomData })
+
    return (
       <div>
          <SplashScreen />
-         <ShowroomHeader showroomData={showroomData} />
-         <main className="flex min-h-[calc(100vh-200px)] flex-col items-center justify-center h-full">
+
+         <Header title="Nuvē showroom" customReturnUrl={headerReturnUrl} />
+
+         <main className="flex min-h-page flex-col items-center justify-center h-full">
             {!showroomData && <Showroom404 />}
             {showroomData && (
                <>
-                  <div className="absolute top-[13%] right-[5%]">
+                  <div className="absolute top-[10%] sm:top-[10%] md:top-[13%] left-[5%] sm:left-auto right-[5%]">
                      <ShowroomInfoCard showroomData={showroomData} />
                   </div>
                   <ShowroomModel showroomData={showroomData} />
@@ -55,4 +67,18 @@ export default async function ShowcaseRoomIdPage(props: PageProps) {
          </main>
       </div>
    )
+}
+
+type parseReturnURLProps = {
+   anchor: string | null
+   showroomData: ShowroomItemType | null
+}
+const parseReturnURL = (props: parseReturnURLProps) => {
+   if (!props.showroomData?.id) return '/'
+
+   if (props.anchor) {
+      return `/#${props.showroomData?.id}`
+   }
+
+   return '/'
 }

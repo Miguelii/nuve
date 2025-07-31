@@ -49,3 +49,7 @@ canvas,
 .canvas-wrapper {
    touch-action: none;
 }
+
+.min-h-page {
+   @apply !min-h-[calc(100vh-174px)];
+}

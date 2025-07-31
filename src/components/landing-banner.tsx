@@ -3,11 +3,12 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { AnimatePresence, motion } from 'framer-motion'
-
-const images = ['/gt3rs_t_c.webp', '/gtr_t_c.webp', '/m4_t_c.webp']
+import { BannerImages } from '@/lib/banner-images'
 
 export function LandingBanner() {
    const [currentIndex, setCurrentIndex] = useState(0)
+
+   const images = BannerImages
 
    useEffect(() => {
       const interval = setInterval(() => {
@@ -16,7 +17,7 @@ export function LandingBanner() {
       return () => clearInterval(interval)
    }, [])
 
-   const currImage = images?.at(currentIndex);
+   const currImage = images?.at(currentIndex)
 
    return (
       <div className="relative w-full h-screen overflow-hidden">

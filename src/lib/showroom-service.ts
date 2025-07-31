@@ -1,5 +1,5 @@
 import { ShowroomIdEnum } from '@/types/ShowroomIdEnum'
-import { tryCatch } from './try-catch'
+import { tryCatch } from '../utils/try-catch'
 import { type ShowroomItemType } from '@/types/ShowroomItemType'
 
 /**
@@ -13,8 +13,20 @@ export default class ShowroomService {
     */
    private static cars: ShowroomItemType[] = [
       {
+         id: ShowroomIdEnum.M4,
+         title: 'BMW M4',
+         images: [
+            '/showcase/bmw_m4_2.webp',
+            '/showcase/bmw_m4_1.webp',
+            '/showcase/bmw_m4_3.webp',
+            '/showcase/bmw_m4_4.webp',
+         ],
+         model: '/models/bmw_m4.glb',
+         logo: '/logos/bmw.webp',
+      },
+      {
          id: ShowroomIdEnum.LAMBORGHINI_SVJ,
-         title: 'Lamborghini Aventador SVJ',
+         title: 'Lamborghini SVJ',
          images: [
             '/showcase/svj_1.jpg',
             '/showcase/svj_2.jpg',

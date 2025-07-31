@@ -2,8 +2,10 @@
 
 import { GLTFResult } from '@/types/GLTFResult'
 import { type ShowroomItemType } from '@/types/ShowroomItemType'
-import { PresentationControls, Stage, useGLTF } from '@react-three/drei'
+import { PresentationControls, Stage, useAnimations, useGLTF } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
+import { useEffect } from 'react'
+import { type AnimationAction } from 'three/src/Three.js'
 
 type ShowroomModelProps = {
    showroomData: ShowroomItemType
@@ -34,6 +36,23 @@ type ModelProps = {
 }
 
 function Model({ model }: ModelProps) {
-   const { scene } = useGLTF(model) as unknown as GLTFResult
+   const { scene, animations } = useGLTF(model) as unknown as GLTFResult
+
+   const { actions, names } = useAnimations(animations, scene)
+
+   useEffect(() => {
+      const name = names[0]
+      let action: AnimationAction | undefined
+
+      if (name && actions[name]) {
+         action = actions[name]!
+         action.reset().fadeIn(0.5).play()
+      }
+
+      return () => {
+         action?.fadeOut(0.5)
+      }
+   }, [actions, names])
+
    return <primitive object={scene} scale={2} />
 }

@@ -49,7 +49,7 @@ function CardTitleWithImage({ title, logo }: CardTitleWithImageProps) {
                </span>
             </div>
          )}
-         <h1 className="text-xl font-bold text-primary bg-gradient-to-r from-cyan-400 to-orange-400 bg-clip-text ">
+         <h1 className="text-xl font-bold text-primary bg-gradient-to-r from-cyan-400 to-orange-400 bg-clip-text max-w-[80%]">
             {title}
          </h1>
       </div>
