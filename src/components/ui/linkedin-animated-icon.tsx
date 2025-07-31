@@ -152,7 +152,7 @@ const LinkedinAnimatedIcon = forwardRef<LinkedinIconHandle, LinkedinIconProps>(
                strokeLinecap="round"
                strokeLinejoin="round"
                viewBox="0 0 24 24"
-               className="w-5 h-5"
+               className="w-5 h-5 shrink-0"
             >
                <motion.path
                   variants={pathVariants}

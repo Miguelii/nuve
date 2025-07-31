@@ -1,7 +1,7 @@
 import React from 'react'
 import ShowroomService from '@/lib/showroom-service'
 import { Timeline, TimelineData } from './ui/timeline'
-import { DelayedPixelImage } from './DelayedPixelImage'
+import { PixelImage } from './ui/pixel-image'
 
 export async function CarsShowcase() {
    const showroomData = await ShowroomService.getAll()
@@ -46,7 +46,15 @@ function ShowCaseItem({ images }: ShowCaseItemProps) {
    return (
       <div className="grid grid-cols-1 gap-4">
          {images?.map((item, index) => {
-            return <DelayedPixelImage key={index} src={item} index={index} />
+            return (
+               <PixelImage
+                  src={item}
+                  grid="8x8"
+                  className="h-[235px] md:h-[300px] lg:h-[380px] xl:h-[500px] aspect-square w-full md:w-full"
+                  grayscaleAnimation={false}
+                  key={`pixel-image-${item}-${index}`}
+               />
+            )
          })}
       </div>
    )

@@ -127,7 +127,7 @@ const GithubAnimatedIcon = forwardRef<GithubIconHandle, GithubIconProps>(
                strokeWidth="2"
                strokeLinecap="round"
                strokeLinejoin="round"
-               className="w-5 h-5"
+               className="w-5 h-5 shrink-0"
             >
                <motion.path
                   variants={bodyVariants}

@@ -17,7 +17,7 @@ export function ShowroomInfoCard({ showroomData }: ShowroomInfoCardProps) {
             {/* 
             <ControlInfo label="Scroll para ampliar/reduzir" Icon={MouseIcon} />
             */}
-            <ControlInfo label="Right button to move" Icon={HandIcon} />
+            <ControlInfo label="Drag to move" Icon={HandIcon} />
          </div>
       </section>
    )
