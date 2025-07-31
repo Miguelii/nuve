@@ -16,7 +16,7 @@ export function LandingBanner() {
       return () => clearInterval(interval)
    }, [])
 
-   const currImage = images?.at(currentIndex)!
+   const currImage = images?.at(currentIndex);
 
    return (
       <div className="relative w-full h-screen overflow-hidden">
@@ -31,7 +31,7 @@ export function LandingBanner() {
                style={{ position: 'absolute' }}
             >
                <Image
-                  src={currImage}
+                  src={currImage!}
                   alt={`Banner ${currentIndex + 1}`}
                   fill
                   style={{ objectFit: 'cover' }}
