@@ -17,6 +17,7 @@ export function ShowroomModel({ showroomData }: ShowroomModelProps) {
          dpr={[1, 2]}
          shadows
          camera={{ fov: 45 }}
+         className="mt-[50%] sm:mt-[40%] md:mt-[25%] lg:mt-[5%] xl:mt-0"
          style={{ position: 'absolute', height: 'calc(100vh - 200px)' }}
       >
          <PresentationControls speed={1.5} global zoom={0.5} polar={[-0.1, Math.PI / 4]}>

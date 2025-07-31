@@ -1,11 +1,10 @@
-import ShowroomService from '@/lib/showroom-service';
+import ShowroomService from '@/lib/showroom-service'
 import type { MetadataRoute } from 'next'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+   const showroomData = await ShowroomService.getAll()
 
-   const showroomData = await ShowroomService.getAll();
-
-   const APP_URL = process.env.NEXT_PUBLIC_APP_HOST ?? '';
+   const APP_URL = process.env.NEXT_PUBLIC_APP_HOST ?? ''
 
    const dynamicSlugs: MetadataRoute.Sitemap = showroomData?.map((item) => {
       return {
@@ -14,7 +13,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
          changeFrequency: 'monthly',
          priority: 0.8,
       }
-   });
+   })
 
    return [
       {
@@ -23,6 +22,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
          changeFrequency: 'monthly',
          priority: 1,
       },
-      ...dynamicSlugs
+      ...dynamicSlugs,
    ]
 }

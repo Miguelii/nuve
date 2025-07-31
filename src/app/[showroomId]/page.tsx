@@ -20,16 +20,15 @@ type PageProps = Readonly<{
  * based on the list of available showroom items.
  *
  * @returns An object containing the list of paths to pre-render
-*/
+ */
 export async function generateStaticParams() {
-
-   const showroomData = await ShowroomService.getAll();
+   const showroomData = await ShowroomService.getAll()
 
    const paths = showroomData?.map((item) => {
       return { showroomId: item.id }
    })
 
-   return paths;
+   return paths
 }
 
 export default async function ShowcaseRoomIdPage(props: PageProps) {

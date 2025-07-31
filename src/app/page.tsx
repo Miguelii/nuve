@@ -10,7 +10,7 @@ export default function Home() {
       <>
          <main className="flex min-h-screen flex-col items-center justify-between">
             <LandingBanner />
-            <div className="main-container flex flex-col gap-12 md:gap-16 lg:gap-24">
+            <div className="main-container flex flex-col gap-12 md:gap-16 lg:gap-24 pb-28">
                <NumbersCard />
                <CarsShowcase />
             </div>

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { cn } from '@/utils/cn'
 
-const images = ['/gt3rs_t_c.webp', '/720s_t_c.webp', '/gtr_t_c.webp', '/m4_t_c.webp']
+const images = ['/gt3rs_t_c.webp', '/gtr_t_c.webp', '/m4_t_c.webp']
 
 export function LandingBanner() {
    const [currentIndex, setCurrentIndex] = useState(0)
