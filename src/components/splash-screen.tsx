@@ -51,18 +51,6 @@ export function SplashScreen() {
          <h1 className="font-mono text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-primary text-center mb-8 uppercase">
             Nuvē
          </h1>
-         {/* 
-      <div className="relative w-48 h-48 mb-8">
-        <h1></h1>
-        <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo%20sdfm-gDlxg0zxe6wVV9o5cISteykVa4LQhz.png"
-          alt="SDFM 2520"
-          fill
-          className="object-contain"
-          priority
-        />
-      </div>
-      */}
 
          {/* Matrix-style loading text */}
          <div className="font-mono text-primary mb-4 h-6">{`LOADING_SHOWROOM: ${matrixText}`}</div>

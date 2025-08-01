@@ -12,8 +12,8 @@ const nextConfig: NextConfig = {
    },
    experimental: {
       //ppr: 'incremental',
-      //webpackBuildWorker: true,
-      //webpackMemoryOptimizations: true,
+      webpackBuildWorker: true,
+      webpackMemoryOptimizations: true,
       reactCompiler: true,
    },
    poweredByHeader: true,
@@ -29,6 +29,19 @@ const nextConfig: NextConfig = {
             hostname: 'i.pinimg.com',
          },
       ],
+   },
+   webpack: (config, { webpack }) => {
+      const buildDate = new Date()
+
+      const timeStamp = buildDate.getTime()
+
+      config.plugins.push(
+         new webpack.DefinePlugin({
+            'process.env.NEXT_PUBLIC_BUILD_TIMESTAMP': JSON.stringify(timeStamp),
+         })
+      )
+
+      return config
    },
 }
 

@@ -2,6 +2,7 @@ import React from 'react'
 import ShowroomService from '@/lib/showroom-service'
 import { Timeline, TimelineData } from './ui/timeline'
 import Image from 'next/image'
+import { getBuildId } from '@/lib/get-build-id'
 
 export async function CarsShowcase() {
    const showroomData = await ShowroomService.getAll()
@@ -43,12 +44,14 @@ type ShowCaseItemProps = {
 }
 
 function ShowCaseItem({ images, htmlKey, alt }: ShowCaseItemProps) {
+   const buildId = getBuildId()
+
    return (
       <div className="grid grid-cols-1 gap-4">
          {images?.map((item, index) => {
             return (
                <Image
-                  src={item}
+                  src={`${item}?v=${buildId}`}
                   key={`${htmlKey}_${index}`}
                   alt={`${alt}`}
                   width={900}

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { AnimatePresence, motion } from 'framer-motion'
 import { BannerImages } from '@/lib/banner-images'
+import { getBuildId } from '@/lib/get-build-id'
 
 export function LandingBanner() {
    const [currentIndex, setCurrentIndex] = useState(0)
@@ -15,9 +16,11 @@ export function LandingBanner() {
          setCurrentIndex((prev) => (prev + 1) % images.length)
       }, 4000)
       return () => clearInterval(interval)
-   }, [])
+   }, [images.length])
 
    const currImage = images?.at(currentIndex)
+
+   const buildId = getBuildId()
 
    return (
       <div className="relative w-full h-screen overflow-hidden">
@@ -32,7 +35,7 @@ export function LandingBanner() {
                style={{ position: 'absolute' }}
             >
                <Image
-                  src={currImage!}
+                  src={`${currImage!}?v=${buildId}`}
                   alt={`Banner ${currentIndex + 1}`}
                   fill
                   style={{ objectFit: 'cover' }}

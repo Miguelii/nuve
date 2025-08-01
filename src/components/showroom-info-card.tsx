@@ -1,3 +1,4 @@
+import { getBuildId } from '@/lib/get-build-id'
 import { type ShowroomItemType } from '@/types/ShowroomItemType'
 import { HandIcon, LucideIcon } from 'lucide-react'
 import Image from 'next/image'
@@ -31,13 +32,15 @@ type CardTitleWithImageProps = {
 function CardTitleWithImage({ title, logo }: CardTitleWithImageProps) {
    const showLogo = logo != null && logo !== ''
 
+   const buildId = getBuildId()
+
    return (
       <div className="flex items-center gap-3 mb-4">
          {showLogo && (
             <Image
                height={40}
                width={40}
-               src={logo}
+               src={`${logo}?v=${buildId}`}
                alt={`${title} logo`}
                className="w-10 h-10 rounded-lg"
             />
