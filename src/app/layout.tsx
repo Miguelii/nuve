@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import '@/styles/globals.css'
 import ReactLenis from 'lenis/react'
-import { BannerImages } from '@/lib/banner-images'
+import { BannerImagesData } from '@/data/banner-images-data'
+import { normalizeBaseUrl } from '@/utils/normalize-base-url'
 
 const geistSans = Geist({
    variable: '--font-geist-sans',
@@ -14,9 +15,7 @@ const geistMono = Geist_Mono({
    subsets: ['latin'],
 })
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_HOST
-   ? new URL(`${process.env.NEXT_PUBLIC_APP_HOST}`)
-   : undefined
+const WEBSITE_URL = normalizeBaseUrl()
 
 export const metadata: Metadata = {
    title: 'Nuvē - Premium Cars',
@@ -34,16 +33,16 @@ export const metadata: Metadata = {
       'Car platform',
       'Premium vehicles',
    ],
-   metadataBase: APP_URL,
+   metadataBase: WEBSITE_URL ? new URL(WEBSITE_URL) : undefined,
    openGraph: {
       title: 'Nuvē - Premium Cars',
       description:
          'Experience the most iconic and rare performance cars with Nuvē - the ultimate luxury automotive showcase.',
-      url: APP_URL,
+      url: WEBSITE_URL ? new URL(WEBSITE_URL) : undefined,
       siteName: 'Nuvē',
       images: [
          {
-            url: `${APP_URL}/opengraph-image.png`,
+            url: `${WEBSITE_URL}/opengraph-image.png`,
             width: 1200,
             height: 630,
             alt: 'Nuvē - Premium Supercar Showcase',
@@ -57,12 +56,12 @@ export const metadata: Metadata = {
       creator: '@migueligoncal',
       site: '@migueligoncal',
       card: 'summary_large_image',
-      images: [`${APP_URL}/twitter-image.png`],
+      images: [`${WEBSITE_URL}/twitter-image.png`],
    },
    creator: 'Nuvē',
    publisher: 'Nuvē',
    alternates: {
-      canonical: APP_URL,
+      canonical: WEBSITE_URL ? new URL(WEBSITE_URL) : undefined,
    },
 }
 
@@ -71,12 +70,10 @@ export default function RootLayout({
 }: Readonly<{
    children: React.ReactNode
 }>) {
-   const images = BannerImages
-
    return (
       <html lang="en">
          {/* Preload banner images */}
-         {images?.map((img) => {
+         {BannerImagesData?.map((img) => {
             return <link rel="preload" as="image" href={img} key={`preload-${img}`} />
          })}
          <ReactLenis root>

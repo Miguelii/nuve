@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { GithubAnimatedIcon } from './ui/github-animated-icon'
-import { LinkedinAnimatedIcon } from './ui/linkedin-animated-icon'
+import { GithubAnimatedIcon } from '../ui/github-animated-icon'
+import { LinkedinAnimatedIcon } from '../ui/linkedin-animated-icon'
 
 export function Footer() {
    return (

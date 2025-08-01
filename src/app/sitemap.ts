@@ -1,14 +1,15 @@
 import ShowroomService from '@/lib/showroom-service'
+import { normalizeBaseUrl } from '@/utils/normalize-base-url'
 import type { MetadataRoute } from 'next'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
    const showroomData = await ShowroomService.getAll()
 
-   const APP_URL = process.env.NEXT_PUBLIC_APP_HOST ?? ''
+   const WEBSITE_URL = normalizeBaseUrl()
 
    const dynamicSlugs: MetadataRoute.Sitemap = showroomData?.map((item) => {
       return {
-         url: `${APP_URL}/${item.id}`,
+         url: `${WEBSITE_URL}/${item.id}`,
          lastModified: new Date(),
          changeFrequency: 'monthly',
          priority: 0.8,
@@ -17,7 +18,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
    return [
       {
-         url: APP_URL,
+         url: WEBSITE_URL ?? '',
          lastModified: new Date(),
          changeFrequency: 'monthly',
          priority: 1,

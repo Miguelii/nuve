@@ -1,7 +1,7 @@
 export function NumbersCard() {
    return (
       <div className="full-margin bg-neutral-dark flex">
-         <section className="main-container py-28 md:flex md:flex-row gap-8 justify-between grid grid-cols-2">
+         <section className="main-container section-padding md:flex md:flex-row gap-8 justify-between grid grid-cols-2">
             <NumberItem number="500+" description="Premium Vehicles" />
 
             <NumberItem number="15+" description="Luxury Brands" />

@@ -42,7 +42,7 @@
 }
 
 .main-container {
-   @apply max-w-[1358px] w-full mx-auto px-5 md:px-10 xl:px-12 2xl:px-0;
+   @apply max-w-full md:max-w-[670px] lg:max-w-[896px] xl:max-w-[1150px] 2xl:max-w-[1438px] w-full mx-auto px-5 md:px-10 xl:px-12 2xl:px-0;
 }
 
 canvas,
@@ -52,4 +52,8 @@ canvas,
 
 .min-h-page {
    @apply !min-h-[calc(100vh-174px)];
+}
+
+.section-padding {
+   @apply py-12 md:py-16 lg:py-20;
 }

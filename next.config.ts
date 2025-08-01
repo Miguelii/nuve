@@ -1,4 +1,7 @@
+import { loadEnv } from '@/utils/load-envs'
 import type { NextConfig } from 'next'
+
+loadEnv()
 
 const nextConfig: NextConfig = {
    turbopack: {
@@ -37,9 +40,11 @@ const nextConfig: NextConfig = {
 
       config.plugins.push(
          new webpack.DefinePlugin({
-            'process.env.NEXT_PUBLIC_BUILD_TIMESTAMP': JSON.stringify(timeStamp),
+            'process.env.NEXT_PUBLIC_BUILD_TIMESTAMP': timeStamp
+               ? JSON.stringify(String(timeStamp))
+               : null,
          })
-      )
+      );
 
       return config
    },

@@ -1,14 +1,15 @@
-import { Showroom404 } from '@/components/showroom-404'
-import { Header } from '@/components/header'
-import { ShowroomInfoCard } from '@/components/showroom-info-card'
-import { ShowroomModel } from '@/components/showroom-model'
-import { SplashScreen } from '@/components/splash-screen'
+import { Showroom404 } from '@/features/showroom/showroom-404'
+import { Header } from '@/components/misc/header'
+import { ShowroomInfoCard } from '@/features/showroom/showroom-info-card'
+import { ShowroomModel } from '@/features/showroom/showroom-model'
+import { SplashScreen } from '@/features/showroom/splash-screen'
 import ShowroomService from '@/lib/showroom-service'
 import { type ShowroomIdEnum } from '@/types/ShowroomIdEnum'
 import { parseSearchParam } from '@/utils/parse-search-param'
 import { type ShowroomItemType } from '@/types/ShowroomItemType'
 
-export const revalidate = 3600 // 1h
+export const dynamic = 'force-static';
+export const revalidate = 86400; // 24h
 
 type ShowcaseRoomIdPageProps = Readonly<{
    params: Promise<{

@@ -2,14 +2,14 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { AnimatePresence, motion } from 'framer-motion'
-import { BannerImages } from '@/lib/banner-images'
-import { getBuildId } from '@/lib/get-build-id'
+import { getBuildId } from '@/utils/get-build-id'
+import { BannerImagesData } from '@/data/banner-images-data'
+import { AnimatePresence, motion } from 'motion/react'
 
 export function LandingBanner() {
    const [currentIndex, setCurrentIndex] = useState(0)
 
-   const images = BannerImages
+   const images = BannerImagesData
 
    useEffect(() => {
       const interval = setInterval(() => {

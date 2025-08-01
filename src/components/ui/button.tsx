@@ -1,7 +1,9 @@
+'use client'
+
 import type React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
-import { motion, type HTMLMotionProps } from 'framer-motion'
 import { Loader2 } from 'lucide-react'
+import { HTMLMotionProps, motion } from 'motion/react'
 
 const buttonVariants = cva(
    // Base styles

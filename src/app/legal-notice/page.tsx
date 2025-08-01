@@ -1,6 +1,9 @@
-import { Footer } from '@/components/footer'
-import { Header } from '@/components/header'
+import { Footer } from '@/components/misc/footer'
+import { Header } from '@/components/misc/header'
 import Link from 'next/link'
+
+export const dynamic = 'force-static';
+export const revalidate = 86400; // 24h
 
 export default async function LegalNoticePage() {
    return (

@@ -1,4 +1,4 @@
-import { getBuildId } from '@/lib/get-build-id'
+import { getBuildId } from '@/utils/get-build-id'
 import { type ShowroomItemType } from '@/types/ShowroomItemType'
 import { HandIcon, LucideIcon } from 'lucide-react'
 import Image from 'next/image'
