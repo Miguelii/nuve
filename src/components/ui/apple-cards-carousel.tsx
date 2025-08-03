@@ -180,7 +180,7 @@ export const CarouselCard = ({ card, layout = false }: CarouselCardProps) => {
    return (
       <motion.button
          layoutId={layout ? `card-${card.title}` : undefined}
-         className="relative z-10 flex h-[25rem] w-[21.875rem] md:h-[28.125rem] md:w-[28.125rem] flex-col items-start justify-start overflow-hidden rounded-3xl bg-neutral-dark lg:h-[30rem] lg:w-[26.625rem]"
+         className="relative z-10 flex h-[25rem] w-[18.75rem] md:h-[28.125rem] md:w-[28.125rem] flex-col items-start justify-start overflow-hidden rounded-3xl bg-neutral-dark lg:h-[30rem] lg:w-[26.625rem]"
       >
          <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent" />
          <div className="relative z-40 p-8">
