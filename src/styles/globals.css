@@ -51,7 +51,7 @@ canvas,
 }
 
 .min-h-page {
-   @apply !min-h-[calc(100vh-174px)];
+   @apply !min-h-[calc(100vh-186px)];
 }
 
 .section-padding {

@@ -1,10 +1,10 @@
 import { CarsShowcase } from '@/features/cars/cars-showcase'
-import { Footer } from '@/components/misc/footer'
 import { LandingBanner } from '@/features/banner/landing-banner'
-import { NumbersCard } from '@/components/misc/numbers-card'
+import { Footer } from '@/components/base/footer'
+import { NumbersCard } from '@/components/base/numbers-card'
 
-export const dynamic = 'force-static';
-export const revalidate = 86400; // 24h
+export const dynamic = 'force-static'
+export const revalidate = 86400 // 24h
 
 export default function Home() {
    return (

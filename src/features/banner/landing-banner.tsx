@@ -47,10 +47,24 @@ export function LandingBanner() {
          </AnimatePresence>
 
          <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <h1 className="font-mono text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-primary text-center mb-4">
+            <motion.h1
+               className="font-mono text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-primary text-center mb-4"
+               initial={{ opacity: 0 }}
+               whileInView={{ opacity: 1 }}
+               transition={{ duration: 1.2, ease: 'easeOut' }}
+               viewport={{ once: true, amount: 0.3 }}
+            >
                Nuvē
-            </h1>
-            <p className="font-mono text-xl text-primary mb-8">Premium Cars</p>
+            </motion.h1>
+            <motion.p
+               className="font-mono text-xl text-primary mb-8"
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               transition={{ duration: 1.2, ease: 'easeOut', delay: 0.35 }}
+               viewport={{ once: true, amount: 0.3 }}
+            >
+               Premium Cars
+            </motion.p>
          </div>
       </div>
    )

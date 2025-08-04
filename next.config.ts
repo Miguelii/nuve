@@ -44,7 +44,7 @@ const nextConfig: NextConfig = {
                ? JSON.stringify(String(timeStamp))
                : null,
          })
-      );
+      )
 
       return config
    },

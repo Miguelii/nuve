@@ -6,11 +6,11 @@ export function Footer() {
    return (
       <footer className="px-0 py-6 w-full bg-neutral-dark">
          <div className="main-container mx-auto flex flex-row gap-10 w-full justify-between items-center">
-            <div className="flex flex-col gap-3">
-               <FooterLinks />
-               <FooterCopy />
-            </div>
+            <FooterLinks />
             <FooterSocials />
+         </div>
+         <div className="w-full flex justify-center mt-6">
+            <FooterCopy />
          </div>
       </footer>
    )
