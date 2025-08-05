@@ -2,11 +2,11 @@ import { Showroom404 } from '@/features/showroom/showroom-404'
 import { ShowroomInfoCard } from '@/features/showroom/showroom-info-card'
 import { ShowroomModel } from '@/features/showroom/showroom-model'
 import { SplashScreen } from '@/features/showroom/splash-screen'
-import ShowroomService from '@/lib/showroom-service'
 import { type ShowroomIdEnum } from '@/types/ShowroomIdEnum'
 import { parseSearchParam } from '@/utils/parse-search-param'
 import { type ShowroomItemType } from '@/types/ShowroomItemType'
 import { Header } from '@/components/base/header'
+import ShowroomService from '@/services/showroom-service'
 
 export const revalidate = 86400 // 24h
 

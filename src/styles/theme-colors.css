@@ -1,0 +1,15 @@
+/* DEFINE COLORS */
+
+:root {
+   --background: #121212;
+   --neutral: #878787;
+   --neutral-dark: #1d1d1d;
+   --primary: #fafafa;
+}
+
+@theme inline {
+   --color-background: var(--background);
+   --color-neutral: var(--neutral);
+   --color-primary: var(--primary);
+   --color-neutral-dark: var(--neutral-dark);
+}

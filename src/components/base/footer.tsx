@@ -1,10 +1,14 @@
 import Link from 'next/link'
 import { GithubAnimatedIcon } from '../ui/github-animated-icon'
 import { LinkedinAnimatedIcon } from '../ui/linkedin-animated-icon'
+import { cn } from '@/utils/cn'
 
-export function Footer() {
+type FooterProps = {
+   className?: string
+}
+export function Footer({ className }: FooterProps) {
    return (
-      <footer className="px-0 py-6 w-full bg-neutral-dark">
+      <footer className={cn('px-0 py-6 w-full bg-neutral-dark', className)}>
          <div className="main-container mx-auto flex flex-row gap-10 w-full justify-between items-center">
             <FooterLinks />
             <FooterSocials />

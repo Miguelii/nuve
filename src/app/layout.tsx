@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import '@/styles/globals.css'
 import ReactLenis from 'lenis/react'
-import { BannerImagesData } from '@/data/banner-images-data'
 import { normalizeBaseUrl } from '@/utils/normalize-base-url'
 
 const geistSans = Geist({
@@ -72,10 +71,6 @@ export default function RootLayout({
 }>) {
    return (
       <html lang="en">
-         {/* Preload banner images */}
-         {BannerImagesData?.map((img) => {
-            return <link rel="preload" as="image" href={img} key={`preload-${img}`} />
-         })}
          <ReactLenis root>
             <body
                className={`${geistSans.variable} ${geistMono.variable} scroll-smooth bg-background font-mono antialiased overscroll-none`}

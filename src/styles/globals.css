@@ -1,37 +1,29 @@
 @import 'tailwindcss';
+@import './theme-colors.css';
+@import './theme-fonts.css';
 
-/* DEFINE COLORS */
-:root {
-   --background: #121212;
-   --neutral: #878787;
-   --neutral-dark: #1d1d1d;
-   --primary: #fafafa;
+/* 
+* Mask for landing banner
+*/
+.landing-banner-mask {
+   height: 100vh;
+   mask-image: url('/assets/mask.svg');
+   mask-position: 49.5% center;
+   mask-repeat: no-repeat;
+   mask-size: 80%;
 }
 
-@theme inline {
-   --color-background: var(--background);
-   --color-neutral: var(--neutral);
-   --color-primary: var(--primary);
-   --color-neutral-dark: var(--neutral-dark);
-}
-/****  ****/
-
-/* DEFINE FONTS */
-@theme inline {
-   --font-sans: var(--font-geist-sans);
-   --font-mono: var(--font-geist-mono);
-}
-/****  ****/
-
+/* 
+* Overwrite browser selection
+*/
 ::selection {
    background: var(--neutral) !important;
    color: var(--primary) !important;
 }
 
-.section-title {
-   @apply text-3xl md:text-4xl lg:text-5xl;
-}
-
+/* 
+* Overwrite container width
+*/
 .full-margin {
    width: 100vw;
    position: relative;
@@ -41,19 +33,31 @@
    margin-right: -50vw;
 }
 
+/* 
+* Main container
+*/
 .main-container {
    @apply max-w-full md:max-w-[670px] lg:max-w-[896px] xl:max-w-[1150px] 2xl:max-w-[1438px] w-full mx-auto px-5 md:px-10 xl:px-12 2xl:px-0;
 }
 
+/* 
+* Dont allow touch on canvas, better experience for mobile users
+*/
 canvas,
 .canvas-wrapper {
    touch-action: none;
 }
 
+/* 
+* Min height of the page (minus header and footer)
+*/
 .min-h-page {
    @apply !min-h-[calc(100vh-186px)];
 }
 
+/* 
+* Top and bottom ading for sections
+*/
 .section-padding {
    @apply py-12 md:py-16 lg:py-20;
 }

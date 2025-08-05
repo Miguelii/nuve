@@ -1,4 +1,4 @@
-import ShowroomService from '@/lib/showroom-service'
+import ShowroomService from '@/services/showroom-service'
 import { normalizeBaseUrl } from '@/utils/normalize-base-url'
 import type { MetadataRoute } from 'next'
 
