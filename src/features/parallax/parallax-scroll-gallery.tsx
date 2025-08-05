@@ -18,6 +18,7 @@ export function ParallaxScrollGallery() {
       '/gallery/10.webp',
       '/gallery/11.webp',
       '/gallery/12.webp',
+      '/gallery/7.webp',
    ]
 
    const { galleryRef, y, y2, y3, y4 } = useParallaxScrollGallery()
@@ -54,7 +55,7 @@ const GalleryColumn = ({ images, y }: GalleryColumnProps) => {
          {images?.map((src, i) => {
             return (
                <div key={i} className="relative w-full h-full rounded-[1vw] overflow-hidden">
-                  <Image src={src} alt="image" fill unoptimized className="object-cover" />
+                  <Image src={src} alt="image" fill className="object-cover" />
                </div>
             )
          })}

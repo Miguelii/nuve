@@ -37,7 +37,7 @@ export function ParallaxScrollAbout() {
             </motion.h2>
 
             <TextGenerateEffect
-               delay={600}
+               delay={300}
                words={words}
                className="font-normal text-center text-primary text-4xl md:text-5xl lg:text-6xl xl:text-[7vw] uppercase leading-none"
             />

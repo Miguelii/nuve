@@ -55,6 +55,7 @@ function BannerBackground({ buildId, currImage, currentIndex }: BannerBackground
          priority={currentIndex === 0}
          className="filter grayscale"
          sizes="100vw"
+         unoptimized
       />
    )
 }
