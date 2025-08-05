@@ -9,7 +9,7 @@ export const useLandingBannerBackground = () => {
    useEffect(() => {
       const interval = setInterval(() => {
          setCurrentIndex((prev) => (prev + 1) % images.length)
-      }, 4000)
+      }, 8000)
       return () => clearInterval(interval)
    }, [images.length])
 

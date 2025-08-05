@@ -46,7 +46,7 @@ type BannerBackgroundProps = {
 }
 function BannerBackground({ buildId, currImage }: BannerBackgroundProps) {
    return (
-      <video autoPlay muted className="w-full h-full object-cover bg-primary">
+      <video autoPlay muted loop playsInline className="w-full h-full object-cover bg-primary">
          <source src={`${currImage}?v=${buildId}`} type="video/mp4" />
       </video>
    )
