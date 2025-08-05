@@ -18,5 +18,6 @@ export const useLandingBannerBackground = () => {
    return {
       currImage,
       currentIndex,
+      images,
    } as const
 }

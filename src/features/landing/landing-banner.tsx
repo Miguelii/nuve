@@ -3,7 +3,6 @@
 import { useLandingBannerMask } from './use-landing-banner-mask'
 import { getBuildId } from '@/utils/get-build-id'
 import { AnimatePresence, motion } from 'motion/react'
-import Image from 'next/image'
 import { useLandingBannerBackground } from './use-landing-banner-background'
 
 export default function LandingBanner() {
@@ -19,14 +18,14 @@ export default function LandingBanner() {
             ref={stickyMask}
             className="flex overflow-hidden sticky top-0 h-screen items-center justify-center landing-banner-mask"
          >
-            <AnimatePresence>
+            <AnimatePresence mode="wait">
                <motion.div
                   key={currImage}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 1 }}
-                  className="h-full w-full relative"
+                  exit={{ opacity: 1 }}
+                  transition={{ duration: 1, ease: 'easeOut' }}
+                  className="absolute top-0 left-0 h-full w-full"
                >
                   <BannerBackground
                      buildId={buildId}
@@ -45,7 +44,13 @@ type BannerBackgroundProps = {
    currImage: string
    currentIndex: number
 }
-function BannerBackground({ buildId, currImage, currentIndex }: BannerBackgroundProps) {
+function BannerBackground({ buildId, currImage }: BannerBackgroundProps) {
+   return (
+      <video autoPlay muted className="w-full h-full object-cover bg-primary">
+         <source src={`${currImage}?v=${buildId}`} type="video/mp4" />
+      </video>
+   )
+   /*
    return (
       <Image
          src={`${currImage}?v=${buildId}`}
@@ -53,9 +58,9 @@ function BannerBackground({ buildId, currImage, currentIndex }: BannerBackground
          fill
          style={{ objectFit: 'cover' }}
          priority={currentIndex === 0}
-         className="filter grayscale"
+         className="filter "
          sizes="100vw"
-         unoptimized
       />
    )
+   */
 }

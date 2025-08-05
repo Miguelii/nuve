@@ -18,6 +18,7 @@ export function ParallaxScrollShowcase() {
             </motion.h2>
 
             <TextGenerateEffect
+               delay={0}
                words={words}
                className="w-full md:w-[60vw] lg:w-[50vw] text-xl md:text-2xl lg:text-3xl xl:text-[2.3vw] self-end uppercase mt-auto flex"
             />
