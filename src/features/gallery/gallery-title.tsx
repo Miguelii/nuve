@@ -25,7 +25,7 @@ export function GalleryTitle({ carData }: GalleryTitleProps) {
             transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
             viewport={{ once: true, amount: 0.6 }}
          >
-            <Link href={`/${carData.id}?anchor=${carData.id}`} prefetch={true} className="w-fit">
+            <Link href={`/${carData.id}`} prefetch={true} className="w-fit">
                <Button className="w-fit !bg-neutral">Show in showroom</Button>
             </Link>
          </motion.div>

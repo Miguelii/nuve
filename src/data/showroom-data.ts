@@ -5,7 +5,7 @@ export const ShowroomData: ShowroomItemType[] = [
    {
       id: ShowroomIdEnum.SF90,
       title: 'Ferrari SF90',
-      showcaseImage: '/showcase/sf90_1.webp',
+      showcaseImage: '/showcase/sf90_2.webp',
       showcaseDescription:
          'The road-legal Ferrari SF90 supercar unleashes cutting-edge hybrid performance on the track. Featuring a powerful twin-turbo V8 and race-inspired aerodynamics, it redefines innovation and speed.',
       model: '/models/ferrari_sf90_stradale.glb',
@@ -51,18 +51,18 @@ export const ShowroomData: ShowroomItemType[] = [
       gallery: [
          {
             background: '/showcase/svj_3.webp',
-            vignette: '/showcase/svj_1.webp',
+            vignette: '/showcase/svj_4.webp',
          },
          {
             background: '/showcase/svj_2.webp',
-            vignette: '/showcase/svj_4.webp',
+            vignette: '/showcase/svj_1.webp',
          },
       ],
    },
    {
       id: ShowroomIdEnum.M4,
       title: 'BMW M4',
-      showcaseImage: '/showcase/bmw_m4_2.webp',
+      showcaseImage: '/showcase/bmw_m4_4.webp',
       showcaseDescription:
          'The road-ready BMW M4 combines everyday usability with motorsport DNA. Featuring a turbocharged inline-6 engine, dynamic handling, and aggressive styling, it delivers thrilling performance on both road and track.',
       model: '/models/bmw_m4.glb',

@@ -3,8 +3,6 @@ import { ShowroomInfoCard } from '@/features/showroom/showroom-info-card'
 import { ShowroomModel } from '@/features/showroom/showroom-model'
 import { SplashScreen } from '@/features/showroom/splash-screen'
 import { type ShowroomIdEnum } from '@/types/ShowroomIdEnum'
-import { parseSearchParam } from '@/utils/parse-search-param'
-import { type ShowroomItemType } from '@/types/ShowroomItemType'
 import { Header } from '@/components/base/header'
 import ShowroomService from '@/services/showroom-service'
 
@@ -13,9 +11,6 @@ export const revalidate = 86400 // 24h
 type ShowcaseRoomIdPageProps = Readonly<{
    params: Promise<{
       showroomId: string
-   }>
-   searchParams: Promise<{
-      anchor: string
    }>
 }>
 
@@ -38,21 +33,16 @@ export async function generateStaticParams() {
 
 export default async function ShowcaseRoomIdPage(props: ShowcaseRoomIdPageProps) {
    const params = await props.params
-   const searchParams = await props.searchParams
-
-   const anchor = parseSearchParam(searchParams.anchor)
 
    const showroomData = await ShowroomService.getById(
       (params?.showroomId as ShowroomIdEnum) ?? null
    )
 
-   const headerReturnUrl = parseReturnURL({ anchor, showroomData })
-
    return (
       <div>
          <SplashScreen />
 
-         <Header title="Nuvē showroom" customReturnUrl={headerReturnUrl} />
+         <Header title="Nuvē showroom" customReturnUrl={'/#gallery'} />
 
          <main className="flex min-h-page flex-col items-center justify-center h-full">
             {!showroomData && <Showroom404 />}
@@ -67,18 +57,4 @@ export default async function ShowcaseRoomIdPage(props: ShowcaseRoomIdPageProps)
          </main>
       </div>
    )
-}
-
-type parseReturnURLProps = {
-   anchor: string | null
-   showroomData: ShowroomItemType | null
-}
-const parseReturnURL = (props: parseReturnURLProps) => {
-   if (!props.showroomData?.id) return '/'
-
-   if (props.anchor) {
-      return `/#${props.showroomData?.id}`
-   }
-
-   return '/'
 }
