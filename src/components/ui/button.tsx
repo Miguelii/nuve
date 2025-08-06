@@ -13,7 +13,7 @@ const buttonVariants = cva(
          intent: {
             default: [
                'bg-neutral-dark border border-neutral cursor-pointer',
-               'text-neutral hover:text-primary',
+               'text-primary hover:text-primary',
                'hover:enabled:bg-neutral',
                'disabled:bg-[#8c8885]',
                '[box-shadow:inset_0px_-2.108433723449707px_0px_0px_#171310,_0px_1.2048193216323853px_6.325301647186279px_0px_rgba(58,_33,_8,_58%)]',

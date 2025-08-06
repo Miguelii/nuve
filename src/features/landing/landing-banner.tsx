@@ -1,41 +1,48 @@
 'use client'
 
-import { useLandingBannerMask } from './use-landing-banner-mask'
 import { getBuildId } from '@/utils/get-build-id'
-import { AnimatePresence, motion } from 'motion/react'
+import { motion } from 'motion/react'
 import { useLandingBannerBackground } from './use-landing-banner-background'
+import { useLandingBannerTextScroll } from './use-landing-banner-text-scroll'
 
 export default function LandingBanner() {
-   const { container, stickyMask } = useLandingBannerMask()
+   const buildId = getBuildId()
 
    const { currImage, currentIndex } = useLandingBannerBackground()
 
-   const buildId = getBuildId()
+   const { secondText, slider, firstText } = useLandingBannerTextScroll()
 
    return (
-      <div ref={container} className="relative h-[300vh]">
-         <div
-            ref={stickyMask}
-            className="flex overflow-hidden sticky top-0 h-screen items-center justify-center landing-banner-mask"
-         >
-            <AnimatePresence mode="wait">
-               <motion.div
-                  key={currImage}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 1 }}
-                  transition={{ duration: 1, ease: 'easeOut' }}
-                  className="absolute top-0 left-0 h-full w-full"
+      <motion.section
+         initial="initial"
+         animate="enter"
+         className="relative flex h-screen overflow-hidden"
+      >
+         <header className="absolute bg-transparent mx-auto w-full flex items-center justify-between p-[35px] z-[999]">
+            <div className="w-full flex items-center justify-between">
+               <h1 className="text-2xl font-bold text-primary uppercase py-4">© NUVĒ</h1>
+            </div>
+         </header>
+
+         <BannerBackground buildId={buildId} currentIndex={currentIndex} currImage={currImage!} />
+
+         <div className="absolute top-[calc(100vh-350px)]">
+            <div ref={slider} className="relative whitespace-nowrap">
+               <p
+                  className="relative m-0 text-[230px] font-medium pr-[50px] text-primary"
+                  ref={firstText}
                >
-                  <BannerBackground
-                     buildId={buildId}
-                     currentIndex={currentIndex}
-                     currImage={currImage!}
-                  />
-               </motion.div>
-            </AnimatePresence>
+                  NUVĒ PREMIUM CARS -
+               </p>
+               <p
+                  className="absolute left-full top-0 m-0 text-[230px] font-medium pr-[50px] text-primary"
+                  ref={secondText}
+               >
+                  NUVĒ PREMIUM CARS -
+               </p>
+            </div>
          </div>
-      </div>
+      </motion.section>
    )
 }
 

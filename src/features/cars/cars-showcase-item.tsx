@@ -55,7 +55,7 @@ export function CarsShowcaseItem({ car }: carsShowcaseItemProps) {
             transition={{ duration: 1, ease: 'easeOut', delay: 0.3 }}
             viewport={{ once: true, amount: 0.1 }}
          >
-            <Carousel items={ProjectCard} />
+            <Carousel items={ProjectCard ?? []} />
          </motion.div>
       </section>
    )

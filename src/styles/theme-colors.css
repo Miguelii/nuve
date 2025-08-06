@@ -1,9 +1,9 @@
 /* DEFINE COLORS */
 
 :root {
-   --background: #121212;
+   --neutral-dark: #121212;
    --neutral: #878787;
-   --neutral-dark: #1d1d1d;
+   --background: #141516;
    --primary: #fafafa;
 }
 

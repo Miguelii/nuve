@@ -73,7 +73,7 @@ export default function RootLayout({
       <html lang="en">
          <ReactLenis root>
             <body
-               className={`${geistSans.variable} ${geistMono.variable} scroll-smooth bg-background font-mono antialiased overscroll-none`}
+               className={`${geistSans.variable} ${geistMono.variable} scroll-smooth bg-background font-sans antialiased overscroll-none`}
             >
                {children}
             </body>
