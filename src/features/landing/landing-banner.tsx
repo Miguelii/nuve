@@ -20,7 +20,7 @@ export default function LandingBanner() {
       >
          <header className="absolute bg-transparent mx-auto w-full flex items-center justify-between p-[35px] z-[999]">
             <div className="w-full flex items-center justify-between">
-               <h1 className="text-2xl font-bold text-primary uppercase py-4">© NUVĒ</h1>
+               <span className="text-2xl font-bold text-primary uppercase py-4">© NUVĒ</span>
             </div>
          </header>
 

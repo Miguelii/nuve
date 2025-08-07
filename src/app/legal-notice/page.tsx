@@ -11,10 +11,10 @@ export default async function LegalNoticePage() {
          <Header title="Nuvē" />
 
          <main className="flex flex-col items-start justify-start main-container min-h-page">
-            <section className="mt-10 flex flex-col gap-8">
+            <div className="mt-10 flex flex-col gap-8">
                <h1 className="text-primary text-2xl font-medium">Legal Notice</h1>
 
-               <div className="flex flex-col gap-6 text-primary text-base">
+               <section className="flex flex-col gap-6 text-primary text-base">
                   <span>
                      This website is intended for educational and non-commercial purposes only.
                   </span>
@@ -94,8 +94,8 @@ export default async function LegalNoticePage() {
                         .
                      </li>
                   </ul>
-               </div>
-            </section>
+               </section>
+            </div>
          </main>
 
          <Footer />

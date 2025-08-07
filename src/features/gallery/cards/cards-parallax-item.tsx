@@ -61,7 +61,9 @@ export const CardsParallaxItem = ({
                         <Button className="w-full xl:w-full">Show Gallery</Button>
                      </Link>
                      <Link href={`/${data.id}`} prefetch={true} className="w-full h-full shrink-0">
-                        <Button className="w-full xl:w-full !bg-neutral">Show in showroom</Button>
+                        <Button className="w-full xl:w-full !bg-neutral-dark-light hover:!bg-neutral">
+                           Show in showroom
+                        </Button>
                      </Link>
                   </div>
                </div>

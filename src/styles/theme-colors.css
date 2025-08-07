@@ -3,6 +3,7 @@
 :root {
    --neutral-dark: #121212;
    --neutral: #878787;
+   --neutral-dark-light: #3d3d3d;
    --background: #141516;
    --primary: #fafafa;
 }
@@ -10,6 +11,7 @@
 @theme inline {
    --color-background: var(--background);
    --color-neutral: var(--neutral);
+   --color-neutral-dark-light: var(--neutral-dark-light);
    --color-primary: var(--primary);
    --color-neutral-dark: var(--neutral-dark);
 }

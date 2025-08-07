@@ -27,7 +27,9 @@ export function GalleryTitle({ carData }: GalleryTitleProps) {
             className="w-full md:w-fit"
          >
             <Link href={`/${carData.id}`} prefetch={true} className="w-full">
-               <Button className="w-full md:w-fit !bg-neutral">Show in showroom</Button>
+               <Button className="w-full md:w-fit !bg-neutral-dark-light hover:!bg-neutral">
+                  Show in showroom
+               </Button>
             </Link>
          </motion.div>
       </div>
