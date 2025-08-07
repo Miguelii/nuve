@@ -1,7 +1,7 @@
 'use client'
 
 import { getBuildId } from '@/utils/get-build-id'
-import { motion } from 'motion/react'
+import { AnimatePresence, motion } from 'motion/react'
 import { useLandingBannerBackground } from './use-landing-banner-background'
 import { useLandingBannerTextScroll } from './use-landing-banner-text-scroll'
 
@@ -24,7 +24,22 @@ export default function LandingBanner() {
             </div>
          </header>
 
-         <BannerBackground buildId={buildId} currentIndex={currentIndex} currImage={currImage!} />
+         <AnimatePresence mode="wait">
+            <motion.div
+               key={currImage}
+               initial={{ opacity: 0 }}
+               animate={{ opacity: 1 }}
+               exit={{ opacity: 1 }}
+               transition={{ duration: 1, ease: 'easeOut' }}
+               className="h-full w-full"
+            >
+               <BannerBackground
+                  buildId={buildId}
+                  currentIndex={currentIndex}
+                  currImage={currImage!}
+               />
+            </motion.div>
+         </AnimatePresence>
 
          <div className="absolute top-[calc(100vh-350px)]">
             <div ref={slider} className="relative whitespace-nowrap">

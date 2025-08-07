@@ -7,7 +7,7 @@ export const ShowroomData: ShowroomItemType[] = [
       title: 'Ferrari SF90',
       showcaseImage: '/showcase/sf90_2.webp',
       showcaseDescription:
-         'The road-legal Ferrari SF90 supercar unleashes cutting-edge hybrid performance on the track. Featuring a powerful twin-turbo V8 and race-inspired aerodynamics, it redefines innovation and speed.',
+         'SF90 blends V8 hybrid tech with track-bred speed and Ferrari innovation. ',
       model: '/models/ferrari_sf90_stradale.glb',
       logo: '/logos/ferrari.webp',
       gallery: [
@@ -25,8 +25,7 @@ export const ShowroomData: ShowroomItemType[] = [
       id: ShowroomIdEnum.PORSCHE_GT3RS,
       title: 'Porsche GT3RS',
       showcaseImage: '/showcase/gt3_rs_1.webp',
-      showcaseDescription:
-         'The road-approved high-performance 911 GT3 RS sports car shows off its full potential on the track. With a high-speed naturally aspirated engine, radical downforce and comprehensive lightweight construction.',
+      showcaseDescription: 'Road-legal GT3 RS with race power, downforce, and precision handling.',
       model: '/models/porsche_gt3_rs.glb',
       logo: '/logos/porsche.webp',
       gallery: [
@@ -45,7 +44,7 @@ export const ShowroomData: ShowroomItemType[] = [
       title: 'Lamborghini SVJ',
       showcaseImage: '/showcase/svj_3.webp',
       showcaseDescription:
-         'The street-legal Lamborghini Aventador SVJ delivers uncompromising performance on the track. With a roaring V12 engine, active aerodynamics, and extreme downforce, it embodies raw power and precision engineering.',
+         'SVJ delivers raw V12 power, active aero, and extreme track-ready force.',
       model: '/models/lamborghini_aventador.glb',
       logo: '/logos/svj.webp',
       gallery: [
@@ -63,8 +62,7 @@ export const ShowroomData: ShowroomItemType[] = [
       id: ShowroomIdEnum.M4,
       title: 'BMW M4',
       showcaseImage: '/showcase/bmw_m4_4.webp',
-      showcaseDescription:
-         'The road-ready BMW M4 combines everyday usability with motorsport DNA. Featuring a turbocharged inline-6 engine, dynamic handling, and aggressive styling, it delivers thrilling performance on both road and track.',
+      showcaseDescription: 'Turbo inline-6. Aggressive feel. Daily drive, track ready. ',
       model: '/models/bmw_m4.glb',
       logo: '/logos/bmw.webp',
       gallery: [

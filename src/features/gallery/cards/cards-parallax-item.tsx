@@ -45,14 +45,14 @@ export const CardsParallaxItem = ({
          <motion.div
             style={{ scale, top: `calc(-5vh + ${i * 25}px)` }}
             className={cn(
-               'bg-neutral-dark relative flex flex-col h-[700px] lg:h-[550px] w-[1000px] rounded-[25px] p-6 md:p-[50px] transform origin-top gap-10 md:gap-10 lg:gap-14'
+               'bg-neutral-dark relative flex flex-col h-[550px] md:h-[600px] lg:h-[500px] w-full rounded-[25px] p-6 md:p-[50px] transform origin-top gap-10 md:gap-10 lg:gap-14'
             )}
          >
             <h2 className="text-primary font-bold text-3xl text-center">{data.title}</h2>
 
             <div className="flex flex-col-reverse lg:flex-row w-full h-full gap-6 md:gap-10 lg:gap-14">
                <div className="w-full lg:w-[45%] h-full flex flex-col justify-between">
-                  <p className="text-base leading-relaxed lg:text-[18px] xl:text-xl text-primary text-pretty line-clamp-6 md:line-clamp-4 lg:line-clamp-[8] xl:line-clamp-6">
+                  <p className="text-base leading-relaxed lg:text-xl xl:text-xl text-primary text-pretty line-clamp-6 md:line-clamp-4 lg:line-clamp-[8] xl:line-clamp-6">
                      {data.showcaseDescription}
                   </p>
 
